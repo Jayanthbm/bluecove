@@ -1,7 +1,16 @@
-export default function App() {
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import AppRoutes from './routes/AppRoutes';
+
+function App() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-red-500">Tailwind ACTIVE</h1>
-    </div>
+    <Router>
+      <Layout>
+        <AppRoutes />
+      </Layout>
+    </Router>
   );
 }
+
+export default App;
