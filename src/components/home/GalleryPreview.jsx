@@ -1,25 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const images = [
-  'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=2574&auto=format&fit=crop', // Maldives water
-  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2670&auto=format&fit=crop', // Massage
-  'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2670&auto=format&fit=crop', // Resort view
-  'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2670&auto=format&fit=crop', // Drink
-  'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2525&auto=format&fit=crop', // Interior
-  'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=2670&auto=format&fit=crop', // Pool
-];
+import { galleryImages as images } from '../../data/gallery';
 
 const GalleryPreview = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Limit to first 6 images for preview
+  const previewImages = images.slice(0, 6);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % previewImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <Section className="bg-slate-50">
       <SectionTitle title="Moments of Bliss" subtitle="Our Gallery" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12 h-96 md:h-[500px]">
-        {images.map((img, index) => (
+      {/* Mobile Slideshow */}
+      <div className="md:hidden relative h-64 mb-12 overflow-hidden rounded-xl">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentSlide}
+            src={previewImages[currentSlide].src}
+            alt={previewImages[currentSlide].alt}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+
+        {/* Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {previewImages.map((_, idx) => (
+            <div
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-colors ${idx === currentSlide ? 'bg-white' : 'bg-white/40'}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12 md:h-[500px]">
+        {previewImages.map((img, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -28,15 +60,15 @@ const GalleryPreview = () => {
             transition={{ delay: index * 0.1 }}
             className={`relative overflow-hidden rounded-xl cursor-pointer group ${
               index === 0
-                ? 'col-span-2 row-span-2 lg:col-span-2 lg:row-span-2'
+                ? 'md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2'
                 : index === 1
-                  ? 'col-span-1 row-span-1 lg:col-span-2 lg:row-span-2'
-                  : 'col-span-1 row-span-1 lg:col-span-1 lg:row-span-1'
+                  ? 'md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2'
+                  : 'md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1'
             }`}
           >
             <img
-              src={img}
-              alt={`Gallery image ${index + 1}`}
+              src={img.src}
+              alt={img.alt}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -45,11 +77,7 @@ const GalleryPreview = () => {
       </div>
 
       <div className="text-center">
-        <Button
-          to="/gallery"
-          variant="outline"
-          className="border-blue-600 text-blue-600 hover:bg-blue-50"
-        >
+        <Button to="/gallery" variant="outline-blue">
           View Full Gallery
         </Button>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Hero from '../components/home/Hero';
+import { motion } from 'framer-motion';
+import HomeHero from '../components/home/HomeHero';
 import FeaturedRooms from '../components/home/FeaturedRooms';
 import HomeAmenities from '../components/home/HomeAmenities';
 import GalleryPreview from '../components/home/GalleryPreview';
@@ -9,20 +10,25 @@ import { useSeo } from '../seo/useSeo';
 
 const Home = () => {
   useSeo({
-    title: 'BlueCove Resort | Luxury Oceanfront Getaway',
+    title: 'Shivani Sunset Bay Beach Resort | Luxury Oceanfront Getaway',
     description:
-      'Experience the ultimate luxury at BlueCove Resort. Sea facing rooms, private beaches, and world class amenities.',
+      'Experience the ultimate luxury at Shivani Sunset Bay Beach Resort. Sea facing rooms, private beaches, and world class amenities.',
   });
 
   return (
-    <div>
-      <Hero />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <HomeHero />
       <FeaturedRooms />
       <HomeAmenities />
       <GalleryPreview />
       <Testimonials />
       <CtaSection />
-    </div>
+    </motion.div>
   );
 };
 

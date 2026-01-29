@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
+import { images } from '../../data/images';
 
 const CtaSection = () => {
   return (
@@ -8,14 +9,13 @@ const CtaSection = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=2664&auto=format&fit=crop")',
+          backgroundImage: `url("${images.home.cta}")`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="absolute inset-0 bg-blue-900/40" />
+        <div className="absolute inset-0 bg-cyan-900/40" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
@@ -23,14 +23,10 @@ const CtaSection = () => {
           Ready for Your Dream Vacation?
         </h2>
         <p className="text-xl md:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
-          Book your stay today and experience the magic of BlueCove Resort.
+          Book your stay today and experience the magic of Shivani Sunset Bay
+          Beach Resort.
         </p>
-        <Button
-          to="/contact"
-          variant="primary"
-          size="lg"
-          className="bg-white text-blue-900 hover:bg-blue-50 shadow-none border-none"
-        >
+        <Button to="/rooms" variant="primary" size="lg" className="shadow-xl">
           Start Your Journey
         </Button>
       </div>

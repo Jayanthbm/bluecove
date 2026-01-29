@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 const variants = {
   primary:
-    'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-900/20',
+    'bg-amber-500 hover:bg-amber-600 text-white shadow-lg shadow-amber-500/30',
   secondary:
-    'bg-teal-500 hover:bg-teal-600 text-white shadow-lg shadow-teal-900/20',
+    'bg-cyan-500 hover:bg-cyan-600 text-white shadow-lg shadow-cyan-500/30',
   outline: 'border-2 border-white text-white hover:bg-white/10',
-  ghost: 'text-blue-600 hover:bg-blue-50',
+  'outline-blue': 'border-2 border-amber-500 text-amber-500 hover:bg-amber-50',
+  ghost: 'text-amber-500 hover:bg-amber-50',
   dark: 'bg-slate-900 text-white hover:bg-slate-800',
 };
 
