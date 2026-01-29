@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Button from '../ui/Button';
-import BeachAudio from '../../soft-waves-on-the-beach-sound-190884.mp3';
+import BeachAudio from '../../assets/audio/waves.mp3';
 
 const Hero = () => {
   const heroRef = useRef(null);

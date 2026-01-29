@@ -4,6 +4,7 @@ import SectionTitle from '../ui/SectionTitle';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import { ArrowRight, User, Maximize } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const rooms = [
   {
@@ -50,35 +51,42 @@ const FeaturedRooms = () => {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {rooms.map((room) => (
-          <Card
+        {rooms.map((room, index) => (
+          <motion.div
             key={room.id}
-            image={room.image}
-            title={room.title}
-            description={room.description}
-            footer={
-              <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center text-slate-500 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Maximize className="w-4 h-4" />
-                    <span>{room.size}</span>
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Card
+              image={room.image}
+              title={room.title}
+              description={room.description}
+              footer={
+                <div className="flex flex-col gap-4">
+                  <div className="flex justify-between items-center text-slate-500 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Maximize className="w-4 h-4" />
+                      <span>{room.size}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      <span>{room.guests}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span>{room.guests}</span>
+                  <div className="flex justify-between items-center mt-2">
+                    <span className="text-blue-600 font-bold text-lg">
+                      {room.price}
+                    </span>
+                    <span className="text-blue-500 text-sm font-medium hover:underline flex items-center gap-1 cursor-pointer">
+                      Details <ArrowRight className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
-                <div className="flex justify-between items-center mt-2">
-                  <span className="text-blue-600 font-bold text-lg">
-                    {room.price}
-                  </span>
-                  <span className="text-blue-500 text-sm font-medium hover:underline flex items-center gap-1 cursor-pointer">
-                    Details <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </div>
-            }
-          />
+              }
+            />
+          </motion.div>
         ))}
       </div>
 
