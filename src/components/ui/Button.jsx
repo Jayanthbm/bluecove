@@ -7,6 +7,7 @@ const variants = {
   secondary:
     'bg-teal-500 hover:bg-teal-600 text-white shadow-lg shadow-teal-900/20',
   outline: 'border-2 border-white text-white hover:bg-white/10',
+  'outline-blue': 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50',
   ghost: 'text-blue-600 hover:bg-blue-50',
   dark: 'bg-slate-900 text-white hover:bg-slate-800',
 };

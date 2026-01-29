@@ -5,35 +5,8 @@ import Section from '../components/ui/Section';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
 import { useSeo } from '../seo/useSeo';
-import { Heart, Globe, Award, Clock } from 'lucide-react';
 
-const stats = [
-  { label: 'Years of Excellence', value: '15+' },
-  { label: 'Luxury Suites', value: '45' },
-  { label: 'International Awards', value: '24' },
-  { label: 'Staff Members', value: '120+' },
-];
-
-const values = [
-  {
-    icon: Heart,
-    title: 'Passion for Service',
-    description:
-      'We believe in anticipating your needs before you even speak them.',
-  },
-  {
-    icon: Globe,
-    title: 'Sustainability',
-    description:
-      'Committed to preserving the pristine beauty of our coastal ecosystem.',
-  },
-  {
-    icon: Award,
-    title: 'Excellence',
-    description:
-      'Setting the highest standards in luxury hospitality and comfort.',
-  },
-];
+import { stats, values } from '../data/about';
 
 const About = () => {
   useSeo({

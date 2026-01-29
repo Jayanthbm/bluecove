@@ -6,6 +6,7 @@ import ContactHero from '../components/contact/ContactHero';
 import Button from '../components/ui/Button';
 import { useSeo } from '../seo/useSeo';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { COMMON_DATA } from '../data/common';
 
 const Contact = () => {
   useSeo({
@@ -37,25 +38,25 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: [
-        'BlueCove Resort, Beach Road',
-        'Murudeshwara, Karnataka 581350',
-      ],
+      details: [COMMON_DATA.address],
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98765 43210', '+91 87654 32109'],
+      details: COMMON_DATA.mobile,
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['reservations@bluecove.com', 'info@bluecove.com'],
+      details: COMMON_DATA.email,
     },
     {
       icon: Clock,
       title: 'Check-in / Check-out',
-      details: ['Check-in: 2:00 PM', 'Check-out: 11:00 AM'],
+      details: [
+        `Check-in: ${COMMON_DATA.CHECK_IN}`,
+        `Check-out: ${COMMON_DATA.CHECK_OUT}`,
+      ],
     },
   ];
 

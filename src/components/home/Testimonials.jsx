@@ -1,55 +1,63 @@
 import React from 'react';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
-import { Star } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    location: 'New York, USA',
-    text: 'The most beautiful resort I have ever visited. The staff was incredibly welcoming and the views are unmatched.',
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: 'Michael Chen',
-    location: 'Toronto, Canada',
-    text: 'A perfect honeymoon destination. The overwater bungalow was a dream come true. Highly recommended!',
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: 'Emma Watson',
-    location: 'London, UK',
-    text: "The spa services were exceptional and the food was divine. Can't wait to come back next year.",
-    rating: 5,
-  },
-];
+import { testimonials, SHOW_TESTIMONIALS } from '../../data/testimonials';
 
 const Testimonials = () => {
-  return (
-    <Section className="bg-blue-50">
-      <SectionTitle title="Guest Reviews" subtitle="What People Say" />
+  if (!SHOW_TESTIMONIALS) return null;
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((review) => (
-          <div
-            key={review.id}
-            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="flex gap-1 mb-4 text-yellow-400">
-              {[...Array(review.rating)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-current" />
-              ))}
-            </div>
-            <p className="text-slate-600 italic mb-6">"{review.text}"</p>
-            <div>
-              <h4 className="font-bold text-slate-900">{review.name}</h4>
-              <span className="text-sm text-slate-400">{review.location}</span>
-            </div>
-          </div>
-        ))}
+  return (
+    <Section className="bg-slate-50 relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-blue-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+      <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] bg-teal-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
+
+      <div className="relative z-10">
+        <SectionTitle title="Guest Reviews" subtitle="What People Say" center />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((review, index) => (
+            <motion.div
+              key={review.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 relative group"
+            >
+              <div className="absolute top-6 right-6 text-blue-100 group-hover:text-blue-500 transition-colors duration-300">
+                <Quote size={40} className="fill-current opacity-20" />
+              </div>
+
+              <div className="flex gap-1 mb-4 text-yellow-400">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} size={16} className="fill-current" />
+                ))}
+              </div>
+
+              <p className="text-slate-600 mb-6 leading-relaxed relative z-10">
+                "{review.text}"
+              </p>
+
+              <div className="flex items-center gap-4 pt-4 border-t border-slate-50">
+                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
+                  {review.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">
+                    {review.name}
+                  </h4>
+                  <span className="text-xs text-slate-400 font-medium tracking-wide uppercase">
+                    {review.location}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </Section>
   );

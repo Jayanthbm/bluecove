@@ -9,6 +9,7 @@ import {
   Phone,
   MapPin,
 } from 'lucide-react';
+import { COMMON_DATA } from '../../data/common';
 
 const Footer = () => {
   return (
@@ -78,19 +79,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400">
                 <MapPin className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>
-                  123 Ocean Drive, Paradise Bay,
-                  <br />
-                  Maldives, 20002
-                </span>
+                <span>{COMMON_DATA.address}</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
                 <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>+960 123 456 789</span>
+                <span>{COMMON_DATA.mobile[0]}</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
                 <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                <span>reservations@bluecove.com</span>
+                <span>{COMMON_DATA.email[0]}</span>
               </li>
             </ul>
           </div>

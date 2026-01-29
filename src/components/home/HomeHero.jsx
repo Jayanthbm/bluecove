@@ -6,37 +6,46 @@ import audioSrc from '../../assets/audio/waves.mp3';
 import { Volume2, VolumeX } from 'lucide-react';
 
 const HomeHero = () => {
-  const [soundOn, setSoundOn] = useState(false);
+  const [isMuted, setIsMuted] = useState(() => {
+    return localStorage.getItem('bluecove_sound') === 'muted';
+  });
+  const [isInView, setIsInView] = useState(true);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Auto-pause audio if scrolled past the hero section (approx 800px)
-      if (window.scrollY > 800 && soundOn) {
-        setSoundOn(false);
-      }
+      const scrolled = window.scrollY > 800; // Threshold
+      setIsInView(!scrolled);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [soundOn]);
+  }, []);
+
+  const toggleSound = () => {
+    const newMuted = !isMuted;
+    setIsMuted(newMuted);
+    localStorage.setItem('bluecove_sound', newMuted ? 'muted' : 'on');
+  };
 
   useEffect(() => {
     if (!audioRef.current) return;
 
-    if (soundOn) {
+    const shouldPlay = !isMuted && isInView;
+
+    if (shouldPlay) {
       audioRef.current.volume = 0.4;
       const playPromise = audioRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch((error) => {
           console.log('Audio playback failed:', error);
-          setSoundOn(false);
+          // Don't auto-mute in state to strictly follow user pref, just fail gracefully
         });
       }
     } else {
       audioRef.current.pause();
     }
-  }, [soundOn]);
+  }, [isMuted, isInView]);
 
   return (
     <div className="relative">
@@ -67,10 +76,10 @@ const HomeHero = () => {
       {/* Audio Control */}
       <audio ref={audioRef} src={audioSrc} loop preload="auto" />
       <button
-        onClick={() => setSoundOn(!soundOn)}
+        onClick={toggleSound}
         className="absolute bottom-24 right-6 md:bottom-10 md:right-10 z-20 flex items-center gap-2 text-white/80 text-xs font-medium tracking-widest backdrop-blur-md px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 hover:text-white transition-all uppercase"
       >
-        {soundOn ? (
+        {!isMuted ? (
           <>
             <Volume2 size={14} /> Sound On
           </>

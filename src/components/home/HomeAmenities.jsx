@@ -5,38 +5,7 @@ import { Wifi, Coffee, MapPin, Sun, Waves, Utensils } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 
-const amenities = [
-  {
-    icon: Waves,
-    title: 'Private Beach',
-    description: 'Exclusive access to pristine white sand beaches.',
-  },
-  {
-    icon: Utensils,
-    title: 'Fine Dining',
-    description: 'Experience world-class culinary delights.',
-  },
-  {
-    icon: Sun,
-    title: 'Infinity Pool',
-    description: 'Relax in our climate-controlled outdoor pools.',
-  },
-  {
-    icon: Coffee,
-    title: 'Luxury Spa',
-    description: 'Rejuvenate with our premium spa treatments.',
-  },
-  {
-    icon: Wifi,
-    title: 'High-Speed Wifi',
-    description: 'Stay connected with complimentary high-speed internet.',
-  },
-  {
-    icon: MapPin,
-    title: 'Island Tours',
-    description: 'Explore the local beauty with guided tours.',
-  },
-];
+import { homeAmenities as amenities } from '../../data/amenities';
 
 const HomeAmenities = () => {
   return (
@@ -55,7 +24,7 @@ const HomeAmenities = () => {
             is designed to provide you with an unforgettable experience.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
             {amenities.map((item, index) => (
               <motion.div
                 key={index}
@@ -63,14 +32,18 @@ const HomeAmenities = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left"
               >
-                <div className="p-3 bg-blue-50 rounded-full text-blue-600">
+                <div className="p-3 bg-blue-50 rounded-full text-blue-600 shrink-0">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">{item.title}</h4>
-                  <p className="text-sm text-slate-500">{item.description}</p>
+                  <h4 className="font-semibold text-slate-900 mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-slate-500 hidden sm:block">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -78,7 +51,7 @@ const HomeAmenities = () => {
         </div>
 
         {/* Right Side: Image Grid */}
-        <div className="relative">
+        <div className="relative hidden lg:block">
           <div className="grid grid-cols-2 gap-4">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -92,7 +65,7 @@ const HomeAmenities = () => {
                 className="rounded-2xl shadow-lg object-cover h-64 w-full"
               />
               <img
-                src="https://images.unsplash.com/photo-1571896349842-6e5a51335022?q=80&w=2670&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1571896349842-6e53ce41be03?q=80&w=2670&auto=format&fit=crop"
                 alt="Room"
                 className="rounded-2xl shadow-lg object-cover h-48 w-full"
               />
@@ -118,11 +91,7 @@ const HomeAmenities = () => {
         </div>
       </div>
       <div className="text-center mt-12">
-        <Button
-          to="/amenities"
-          variant="outline"
-          className="border-blue-600 text-blue-600 hover:bg-blue-50"
-        >
+        <Button to="/amenities" variant="outline-blue">
           View All Amenities
         </Button>
       </div>

@@ -19,93 +19,8 @@ import {
   Image as ImageIcon,
 } from 'lucide-react';
 
-const allRooms = [
-  {
-    id: 1,
-    title: 'Ocean View Suite',
-    description:
-      'Wake up to the sound of waves in our premium ocean view suites with private balcony. Featuring a king-size bed and a spacious living area.',
-    image:
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2670&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2525&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2574&auto=format&fit=crop',
-    ],
-    price: '$450 / night',
-    size: '65m²',
-    guests: '2 Adults',
-    amenities: [Wifi, Coffee, Sun],
-  },
-  {
-    id: 2,
-    title: 'Garden Villa',
-    description:
-      'Surrounded by lush tropical gardens, offering ultimate privacy and tranquility. Includes a private patio and outdoor rain shower.',
-    image:
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2574&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2574&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1571896349842-6e53ce41be03?q=80&w=2670&auto=format&fit=crop',
-    ],
-    price: '$380 / night',
-    size: '80m²',
-    guests: '4 Guests',
-    amenities: [Wifi, Coffee],
-  },
-  {
-    id: 3,
-    title: 'Overwater Bungalow',
-    description:
-      'Direct ocean access from your private deck. The ultimate luxury experience with glass floor panels and infinity plunge pool.',
-    image:
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=2574&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=2574&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?q=80&w=2727&auto=format&fit=crop',
-    ],
-    price: '$850 / night',
-    size: '110m²',
-    guests: '2 Adults',
-    amenities: [Wifi, Coffee, Sun],
-  },
-  {
-    id: 4,
-    title: 'Family Coastal Suite',
-    description:
-      'Designed for families, this spacious suite offers two bedrooms, a large living area, and easy access to the kids club and main pool.',
-    image:
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2670&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512918760383-568802a3c369?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2670&auto=format&fit=crop',
-    ],
-    price: '$550 / night',
-    size: '95m²',
-    guests: '2 Adults, 2 Kids',
-    amenities: [Wifi, Sun],
-  },
-  {
-    id: 5,
-    title: 'Presidential Penthouse',
-    description:
-      'Top-floor exclusivity with panoramic ocean views, private jacuzzi, butler service, and a dedicated dining room for in-suite meals.',
-    image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2670&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2670&auto=format&fit=crop',
-    ],
-    price: '$1200 / night',
-    size: '200m²',
-    guests: '4 Adults',
-    amenities: [Wifi, Coffee, Sun],
-  },
-];
+import { rooms as allRooms } from '../data/rooms';
+import { COMMON_DATA } from '../data/common';
 
 const BookingModal = ({ room, onClose }) => {
   if (!room) return null;
@@ -134,13 +49,13 @@ const BookingModal = ({ room, onClose }) => {
 
         <div className="space-y-4">
           <a
-            href="tel:+919876543210"
+            href={`tel:${COMMON_DATA.mobile[0].replace(/\s+/g, '')}`}
             className="flex items-center justify-center gap-3 w-full py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
           >
             <Phone size={20} /> Call for Reservation
           </a>
           <a
-            href="https://wa.me/919876543210"
+            href={`https://wa.me/${COMMON_DATA.whatsapp.replace(/\+/g, '').replace(/\s+/g, '')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium"
@@ -216,47 +131,58 @@ const Rooms = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              className="h-full"
             >
               <Card
-                image={room.image}
+                images={room.images}
                 title={room.title}
                 description={room.description}
+                onFullScreen={() => setGalleryRoom(room)}
                 footer={
                   <div className="flex flex-col gap-4">
                     <div className="flex justify-between items-center text-slate-500 text-sm">
-                      <div className="flex items-center gap-2">
+                      <div
+                        className="flex items-center gap-2"
+                        title="Room Size"
+                      >
                         <Maximize className="w-4 h-4" />
                         <span>{room.size}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div
+                        className="flex items-center gap-2"
+                        title="Guest Capacity"
+                      >
                         <User className="w-4 h-4" />
-                        <span>{room.guests}</span>
+                        <span>
+                          {room.adults} Adults
+                          {room.children > 0 && `, ${room.children} Children`}
+                        </span>
                       </div>
                     </div>
-                    {/* Amenities Icons */}
+                    {/* Amenities Icons with Group Tooltip */}
                     <div className="flex gap-3 text-slate-400">
                       {room.amenities.map((Icon, idx) => (
-                        <Icon key={idx} size={16} />
+                        <div key={idx} className="relative group/tooltip">
+                          <Icon
+                            size={16}
+                            className="hover:text-blue-500 transition-colors cursor-help"
+                          />
+                          {/* Simple Tooltip */}
+                          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-slate-800 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                            {Icon.displayName || 'Amenity'}
+                          </span>
+                        </div>
                       ))}
                     </div>
                     <div className="flex justify-between items-center mt-2 pt-4 border-t border-slate-100">
-                      <div className="flex flex-col">
-                        <span className="text-blue-600 font-bold text-xl">
-                          {room.price}
-                        </span>
-                        <button
-                          onClick={() => setGalleryRoom(room)}
-                          className="text-slate-400 text-xs hover:text-blue-500 flex items-center gap-1 mt-1 transition-colors"
-                        >
-                          <ImageIcon size={12} /> View Photos
-                        </button>
-                      </div>
+                      <span className="text-blue-600 font-bold text-xl">
+                        {room.price}
+                      </span>
 
                       <Button
                         variant="primary"
                         size="sm"
                         onClick={() => setBookingRoom(room)}
-                        // to="/contact" // Replaced by modal logic
                       >
                         Book Now
                       </Button>
