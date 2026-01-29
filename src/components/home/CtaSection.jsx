@@ -25,12 +25,7 @@ const CtaSection = () => {
         <p className="text-xl md:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
           Book your stay today and experience the magic of BlueCove Resort.
         </p>
-        <Button
-          to="/contact"
-          variant="primary"
-          size="lg"
-          className="bg-white text-blue-900 hover:bg-blue-50 shadow-none border-none"
-        >
+        <Button to="/rooms" variant="primary" size="lg" className="shadow-xl">
           Start Your Journey
         </Button>
       </div>

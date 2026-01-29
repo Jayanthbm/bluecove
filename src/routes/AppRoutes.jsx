@@ -8,11 +8,14 @@ import Amenities from '../pages/Amenities';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 
+import ScrollToTop from '../components/common/ScrollToTop';
+
 const AppRoutes = () => {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />

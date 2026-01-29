@@ -4,7 +4,7 @@ import Hero from '../common/Hero';
 const AmenitiesHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1571896349842-6e53ce41be03?q=80&w=2670&auto=format&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2670&auto=format&fit=crop"
       title="Indulge Your Senses"
       subtitle="Amenities & Experiences"
       height="h-[60vh] min-h-[500px]"

@@ -10,6 +10,18 @@ const HomeHero = () => {
   const audioRef = useRef(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      // Auto-pause audio if scrolled past the hero section (approx 800px)
+      if (window.scrollY > 800 && soundOn) {
+        setSoundOn(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [soundOn]);
+
+  useEffect(() => {
     if (!audioRef.current) return;
 
     if (soundOn) {
@@ -38,13 +50,13 @@ const HomeHero = () => {
           Private Beach Access · Ocean View Suites · Spa & Coastal Dining
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button to="/rooms" variant="primary" size="lg" className="shadow-xl">
+          <Button to="/rooms" variant="primary" size="md" className="shadow-xl">
             Check Availability
           </Button>
           <Button
             to="/about"
             variant="outline"
-            size="lg"
+            size="md"
             className="backdrop-blur-sm bg-white/10 border-white/40 hover:bg-white/20"
           >
             Explore Resort

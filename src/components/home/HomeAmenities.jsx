@@ -3,6 +3,7 @@ import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
 import { Wifi, Coffee, MapPin, Sun, Waves, Utensils } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Button from '../ui/Button';
 
 const amenities = [
   {
@@ -115,6 +116,15 @@ const HomeAmenities = () => {
             </motion.div>
           </div>
         </div>
+      </div>
+      <div className="text-center mt-12">
+        <Button
+          to="/amenities"
+          variant="outline"
+          className="border-blue-600 text-blue-600 hover:bg-blue-50"
+        >
+          View All Amenities
+        </Button>
       </div>
     </Section>
   );

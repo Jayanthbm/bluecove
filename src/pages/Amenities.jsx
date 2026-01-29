@@ -134,7 +134,7 @@ const Amenities = () => {
       <Section className="bg-blue-900 text-white py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif mb-4">More to Enjoy</h2>
-          <p className="text-blue-200">
+          <p className="text-white/90 text-lg">
             Every detail handled with care for your seamless stay.
           </p>
         </div>
@@ -147,10 +147,12 @@ const Amenities = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="flex flex-col items-center gap-4 p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-colors backdrop-blur-sm"
+              className="flex flex-col items-center gap-4 p-6 bg-white/10 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/10"
             >
-              <feature.icon className="w-10 h-10 text-blue-300" />
-              <span className="font-medium tracking-wide">{feature.label}</span>
+              <feature.icon className="w-10 h-10 text-white" />
+              <span className="font-medium tracking-wide text-white">
+                {feature.label}
+              </span>
             </motion.div>
           ))}
         </div>

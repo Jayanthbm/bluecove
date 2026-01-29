@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BackToTop from '../common/BackToTop';
 
 const Layout = ({ children }) => {
   return (
@@ -8,6 +9,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
