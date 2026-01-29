@@ -109,7 +109,7 @@ const Card = ({
                   e.stopPropagation();
                   setIsExpanded(!isExpanded);
                 }}
-                className="text-blue-600 text-sm font-medium mt-1 hover:underline focus:outline-none"
+                className="text-cyan-600 text-sm font-medium mt-1 hover:underline focus:outline-none"
               >
                 {isExpanded ? 'Show Less' : 'Show More'}
               </button>

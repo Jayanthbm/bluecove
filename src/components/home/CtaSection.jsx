@@ -15,7 +15,7 @@ const CtaSection = () => {
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="absolute inset-0 bg-blue-900/40" />
+        <div className="absolute inset-0 bg-cyan-900/40" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center text-white">

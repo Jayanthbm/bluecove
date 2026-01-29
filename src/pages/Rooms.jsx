@@ -165,7 +165,7 @@ const Rooms = () => {
                         <div key={idx} className="relative group/tooltip">
                           <Icon
                             size={16}
-                            className="hover:text-blue-500 transition-colors cursor-help"
+                            className="hover:text-cyan-500 transition-colors cursor-help"
                           />
                           {/* Simple Tooltip */}
                           <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-slate-800 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -175,7 +175,7 @@ const Rooms = () => {
                       ))}
                     </div>
                     <div className="flex justify-between items-center mt-2 pt-4 border-t border-slate-100">
-                      <span className="text-blue-600 font-bold text-xl">
+                      <span className="text-slate-700 font-bold text-xl">
                         {room.price}
                       </span>
 

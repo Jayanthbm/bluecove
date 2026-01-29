@@ -63,7 +63,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 group z-50 relative">
             <Anchor
               className={`w-8 h-8 transition-colors ${
-                scrolled || isOpen ? 'text-blue-600' : 'text-blue-500'
+                scrolled || isOpen ? 'text-cyan-600' : 'text-cyan-500'
               }`}
             />
             <span
@@ -71,7 +71,7 @@ const Navbar = () => {
                 scrolled || isOpen ? 'text-slate-900' : 'text-white'
               }`}
             >
-              Blue<span className="text-blue-500">Cove</span>
+              Blue<span className="text-cyan-500">Cove</span>
             </span>
           </Link>
 
@@ -81,9 +81,9 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-blue-500 ${
+                className={`text-sm font-medium transition-colors hover:text-cyan-500 ${
                   scrolled ? 'text-slate-600' : 'text-white/90 hover:text-white'
-                } ${location.pathname === link.path ? 'text-blue-500' : ''}`}
+                } ${location.pathname === link.path ? 'text-cyan-500' : ''}`}
               >
                 {link.name}
               </Link>
@@ -156,7 +156,7 @@ const Navbar = () => {
                       to={link.path}
                       className={`text-2xl font-light tracking-wide block py-2 ${
                         location.pathname === link.path
-                          ? 'text-blue-600 font-normal'
+                          ? 'text-cyan-600 font-normal'
                           : 'text-slate-800'
                       }`}
                       onClick={() => setIsOpen(false)}

@@ -26,7 +26,7 @@ export const rooms = [
     images: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2574&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1571896349842-6e53ce41be03?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2670&auto=format&fit=crop',
     ],
     price: '₹28,000 / night',
     size: '80m²',
@@ -50,7 +50,7 @@ export const rooms = [
     adults: 2,
     children: 0,
     amenities: [Wifi, Coffee, Sun],
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: 4,

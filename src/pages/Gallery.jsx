@@ -88,8 +88,8 @@ const Gallery = () => {
               onClick={() => setFilter(cat)}
               className={`px-6 py-2 rounded-full text-sm font-medium tracking-wide transition-all ${
                 filter === cat
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-600'
+                  ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
+                  : 'bg-white text-slate-600 hover:bg-cyan-50 hover:text-cyan-600'
               }`}
             >
               {cat}

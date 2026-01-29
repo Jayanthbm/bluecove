@@ -11,7 +11,7 @@ const SectionTitle = ({ title, subtitle, center = true, className = '' }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-blue-600 font-medium tracking-wider uppercase text-sm block mb-3"
+          className="text-cyan-600 font-medium tracking-wider uppercase text-sm block mb-3"
         >
           {subtitle}
         </motion.span>
@@ -30,7 +30,7 @@ const SectionTitle = ({ title, subtitle, center = true, className = '' }) => {
         whileInView={{ opacity: 1, scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className={`h-1 w-20 bg-blue-500 rounded-full ${center ? 'mx-auto' : 'mr-auto'}`}
+        className={`h-1 w-20 bg-cyan-500 rounded-full ${center ? 'mx-auto' : 'mr-auto'}`}
       />
     </div>
   );

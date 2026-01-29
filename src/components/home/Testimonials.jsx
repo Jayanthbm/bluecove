@@ -12,7 +12,7 @@ const Testimonials = () => {
   return (
     <Section className="bg-slate-50 relative overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-blue-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-cyan-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] bg-teal-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
 
       <div className="relative z-10">
@@ -28,7 +28,7 @@ const Testimonials = () => {
               transition={{ delay: index * 0.1 }}
               className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 relative group"
             >
-              <div className="absolute top-6 right-6 text-blue-100 group-hover:text-blue-500 transition-colors duration-300">
+              <div className="absolute top-6 right-6 text-cyan-100 group-hover:text-cyan-500 transition-colors duration-300">
                 <Quote size={40} className="fill-current opacity-20" />
               </div>
 
@@ -43,7 +43,7 @@ const Testimonials = () => {
               </p>
 
               <div className="flex items-center gap-4 pt-4 border-t border-slate-50">
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
+                <div className="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-lg">
                   {review.name.charAt(0)}
                 </div>
                 <div>

@@ -34,7 +34,7 @@ const HomeAmenities = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left"
               >
-                <div className="p-3 bg-blue-50 rounded-full text-blue-600 shrink-0">
+                <div className="p-3 bg-cyan-50 rounded-full text-cyan-600 shrink-0">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>

@@ -50,7 +50,7 @@ export const amenitiesPageData = [
 
 export const amenitiesFeatures = [
   { icon: Wifi, label: 'High-Speed Wifi' },
-  { icon: Dumbbell, label: '24/7 Fitness Center' },
+  { icon: Dumbbell, label: 'Fitness Center' },
   { icon: Trees, label: 'Lush Gardens' },
   { icon: MapPin, label: 'Concierge Service' },
 ];

@@ -34,7 +34,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-sm font-bold text-blue-600 tracking-widest uppercase mb-3">
+              <h2 className="text-sm font-bold text-cyan-600 tracking-widest uppercase mb-3">
                 Our Heritage
               </h2>
               <h3 className="text-4xl font-serif text-slate-900 mb-6 leading-tight">
@@ -52,7 +52,7 @@ const About = () => {
                 at BlueCove is curated to ensure that your stay is nothing short
                 of magical.
               </p>
-              <div className="h-1 w-20 bg-blue-500" />
+              <div className="h-1 w-20 bg-cyan-500" />
             </motion.div>
           </div>
           <div className="w-full md:w-1/2 relative">
@@ -65,7 +65,7 @@ const About = () => {
               alt="Resort Exterior"
               className="rounded-lg shadow-2xl relative z-10"
             />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-50 z-0 rounded-lg" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-50 z-0 rounded-lg" />
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-slate-100 z-0 rounded-lg" />
           </div>
         </div>
@@ -83,7 +83,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
                   {stat.value}
                 </div>
                 <div className="text-slate-400 uppercase tracking-wider text-xs font-semibold">
@@ -108,7 +108,7 @@ const About = () => {
               transition={{ delay: index * 0.2 }}
               className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >
-              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6">
+              <div className="w-14 h-14 bg-cyan-50 rounded-full flex items-center justify-center text-cyan-600 mx-auto mb-6">
                 <item.icon size={28} />
               </div>
               <h4 className="text-xl font-bold text-slate-800 mb-4">

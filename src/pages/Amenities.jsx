@@ -60,7 +60,7 @@ const Amenities = () => {
               >
                 {/* Image Side */}
                 <div className="w-full lg:w-1/2 relative group overflow-hidden rounded-2xl shadow-2xl">
-                  <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-all duration-500 z-10" />
+                  <div className="absolute inset-0 bg-cyan-900/10 group-hover:bg-transparent transition-all duration-500 z-10" />
                   <img
                     src={item.image}
                     alt={item.title}
@@ -70,7 +70,7 @@ const Amenities = () => {
 
                 {/* Text Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4">
+                  <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-600 mb-4">
                     <item.icon size={24} />
                   </div>
                   <h3 className="text-3xl font-serif text-slate-900">
@@ -90,7 +90,7 @@ const Amenities = () => {
       </div>
 
       {/* Additional Features Grid */}
-      <Section className="bg-blue-900 text-white py-24">
+      <Section bgColor="bg-cyan-900" className="text-white py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif mb-4">More to Enjoy</h2>
           <p className="text-white/90 text-lg">
