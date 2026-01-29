@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from '../common/Hero';
 
+import { images } from '../../data/images';
+
 const RoomsHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2574&auto=format&fit=crop"
+      imageSrc={images.heros.rooms}
       title="Luxury Sanctuary"
       subtitle="Accommodations"
       height="h-[60vh] min-h-[500px]"

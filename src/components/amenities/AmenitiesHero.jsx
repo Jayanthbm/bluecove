@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from '../common/Hero';
 
+import { images } from '../../data/images';
+
 const AmenitiesHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2670&auto=format&fit=crop"
+      imageSrc={images.heros.amenities}
       title="Indulge Your Senses"
       subtitle="Amenities & Experiences"
       height="h-[60vh] min-h-[500px]"

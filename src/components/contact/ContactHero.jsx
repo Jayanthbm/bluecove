@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from '../common/Hero';
 
+import { images } from '../../data/images';
+
 const ContactHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2670&auto=format&fit=crop"
+      imageSrc={images.heros.contact}
       title="Get in Touch"
       subtitle="Contact Us"
       height="h-[60vh] min-h-[500px]"

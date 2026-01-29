@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from '../common/Hero';
 
+import { images } from '../../data/images';
+
 const AboutHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop"
+      imageSrc={images.heros.about}
       title="Our Story"
       subtitle="About BlueCove"
       height="h-[60vh] min-h-[500px]"

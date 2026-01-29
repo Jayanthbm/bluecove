@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
+import { images } from '../../data/images';
 
 const CtaSection = () => {
   return (
@@ -8,8 +9,7 @@ const CtaSection = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=2664&auto=format&fit=crop")',
+          backgroundImage: `url("${images.home.cta}")`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',

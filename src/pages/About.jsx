@@ -7,6 +7,7 @@ import Button from '../components/ui/Button';
 import { useSeo } from '../seo/useSeo';
 
 import { stats, values } from '../data/about';
+import { images } from '../data/images';
 
 const About = () => {
   useSeo({
@@ -61,7 +62,7 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2698&auto=format&fit=crop"
+              src={images.about.heritage}
               alt="Resort Exterior"
               className="rounded-lg shadow-2xl relative z-10"
             />

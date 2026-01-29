@@ -9,12 +9,16 @@ import { galleryImages as images } from '../../data/gallery';
 const GalleryPreview = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Limit to first 6 images for preview
+  const previewImages = images.slice(0, 6);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
+      setCurrentSlide((prev) => (prev + 1) % previewImages.length);
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
   return (
     <Section className="bg-slate-50">
       <SectionTitle title="Moments of Bliss" subtitle="Our Gallery" />
@@ -24,8 +28,8 @@ const GalleryPreview = () => {
         <AnimatePresence mode="wait">
           <motion.img
             key={currentSlide}
-            src={images[currentSlide]}
-            alt={`Gallery image ${currentSlide + 1}`}
+            src={previewImages[currentSlide].src}
+            alt={previewImages[currentSlide].alt}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
@@ -36,7 +40,7 @@ const GalleryPreview = () => {
 
         {/* Indicators */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {images.map((_, idx) => (
+          {previewImages.map((_, idx) => (
             <div
               key={idx}
               className={`w-2 h-2 rounded-full transition-colors ${idx === currentSlide ? 'bg-white' : 'bg-white/40'}`}
@@ -47,7 +51,7 @@ const GalleryPreview = () => {
 
       {/* Desktop Grid */}
       <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12 md:h-[500px]">
-        {images.map((img, index) => (
+        {previewImages.map((img, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -63,8 +67,8 @@ const GalleryPreview = () => {
             }`}
           >
             <img
-              src={img}
-              alt={`Gallery image ${index + 1}`}
+              src={img.src}
+              alt={img.alt}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />

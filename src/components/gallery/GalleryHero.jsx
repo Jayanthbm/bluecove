@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from '../common/Hero';
 
+import { images } from '../../data/images';
+
 const GalleryHero = () => {
   return (
     <Hero
-      imageSrc="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2670&auto=format&fit=crop"
+      imageSrc={images.heros.gallery}
       title="Visual Journey"
       subtitle="Gallery"
       height="h-[60vh] min-h-[500px]"
