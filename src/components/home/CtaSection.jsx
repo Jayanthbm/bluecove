@@ -23,7 +23,8 @@ const CtaSection = () => {
           Ready for Your Dream Vacation?
         </h2>
         <p className="text-xl md:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
-          Book your stay today and experience the magic of BlueCove Resort.
+          Book your stay today and experience the magic of Shivani Sunset Bay
+          Beach Resort.
         </p>
         <Button to="/rooms" variant="primary" size="lg" className="shadow-xl">
           Start Your Journey

@@ -10,9 +10,9 @@ import { useSeo } from '../seo/useSeo';
 
 const Home = () => {
   useSeo({
-    title: 'BlueCove Resort | Luxury Oceanfront Getaway',
+    title: 'Shivani Sunset Bay Beach Resort | Luxury Oceanfront Getaway',
     description:
-      'Experience the ultimate luxury at BlueCove Resort. Sea facing rooms, private beaches, and world class amenities.',
+      'Experience the ultimate luxury at Shivani Sunset Bay Beach Resort. Sea facing rooms, private beaches, and world class amenities.',
   });
 
   return (

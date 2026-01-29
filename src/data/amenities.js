@@ -21,7 +21,7 @@ export const amenitiesPageData = [
     reverse: false,
   },
   {
-    title: 'The BlueCove Spa',
+    title: 'The Shivani Spa',
     description:
       'Rejuvenate your senses in our world-class spa. Offering a range of holistic treatments, massages, and wellness therapies designed to restore balance and harmony to your body and mind.',
     image:

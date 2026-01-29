@@ -102,7 +102,7 @@ const GalleryModal = ({ room, onClose }) => {
 
 const Rooms = () => {
   useSeo({
-    title: 'Luxury Rooms & Suites | BlueCove Resort',
+    title: 'Luxury Rooms & Suites | Shivani Sunset Bay Beach Resort',
     description:
       'Explore our luxurious rooms and suites with breathtaking ocean views.',
   });
@@ -165,7 +165,7 @@ const Rooms = () => {
                         <div key={idx} className="relative group/tooltip">
                           <Icon
                             size={16}
-                            className="hover:text-cyan-500 transition-colors cursor-help"
+                            className="hover:text-amber-500 transition-colors cursor-help"
                           />
                           {/* Simple Tooltip */}
                           <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-slate-800 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">

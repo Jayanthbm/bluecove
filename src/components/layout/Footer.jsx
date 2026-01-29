@@ -19,20 +19,20 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <Anchor className="w-8 h-8 text-cyan-400" />
+              <Anchor className="w-8 h-8 text-amber-400" />
               <span className="text-2xl font-bold">
-                Blue<span className="text-cyan-400">Cove</span>
+                Shivani<span className="text-amber-400">SunsetBay</span>
               </span>
             </Link>
             <p className="text-slate-400 leading-relaxed">
-              Experience the ultimate luxury at our sea-facing resort.
-              Tranquility, elegance, and unforgettable memories await.
+              Experience the ultimate luxury at Shivani Sunset Bay Beach Resort.
+              Tranquility, elegance, and unforgettable ocean views await.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-cyan-400">
+            <h3 className="text-lg font-semibold mb-6 text-amber-400">
               Explore
             </h3>
             <ul className="space-y-3">
@@ -73,20 +73,20 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-cyan-400">
+            <h3 className="text-lg font-semibold mb-6 text-amber-400">
               Contact Us
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400">
-                <MapPin className="w-5 h-5 text-cyan-500 shrink-0" />
+                <MapPin className="w-5 h-5 text-amber-500 shrink-0" />
                 <span>{COMMON_DATA.address}</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
-                <Phone className="w-5 h-5 text-cyan-500 shrink-0" />
+                <Phone className="w-5 h-5 text-amber-500 shrink-0" />
                 <span>{COMMON_DATA.mobile[0]}</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
-                <Mail className="w-5 h-5 text-cyan-500 shrink-0" />
+                <Mail className="w-5 h-5 text-amber-500 shrink-0" />
                 <span>{COMMON_DATA.email[0]}</span>
               </li>
             </ul>
@@ -94,7 +94,7 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-cyan-400">
+            <h3 className="text-lg font-semibold mb-6 text-amber-400">
               Stay Updated
             </h3>
             <p className="text-slate-400 mb-4">
@@ -104,12 +104,12 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                 required
               />
               <button
                 type="submit"
-                className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
               >
                 Subscribe
               </button>
@@ -119,24 +119,25 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} BlueCove Resort. All rights reserved.
+            © {new Date().getFullYear()} Shivani Sunset Bay Beach Resort. All
+            rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-amber-400 transition-colors"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-amber-400 transition-colors"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-amber-400 transition-colors"
             >
               <Twitter className="w-5 h-5" />
             </a>

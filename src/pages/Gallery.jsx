@@ -12,7 +12,7 @@ const categories = ['All', 'Rooms', 'Exterior', 'Dining', 'Pool'];
 
 const Gallery = () => {
   useSeo({
-    title: 'Photo Gallery | BlueCove Resort',
+    title: 'Photo Gallery | Shivani Sunset Bay Beach Resort',
     description:
       'View photos of our beautiful resort, amenities, and ocean views.',
   });
@@ -42,8 +42,8 @@ const Gallery = () => {
               onClick={() => setFilter(cat)}
               className={`px-6 py-2 rounded-full text-sm font-medium tracking-wide transition-all ${
                 filter === cat
-                  ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
-                  : 'bg-white text-slate-600 hover:bg-cyan-50 hover:text-cyan-600'
+                  ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/30'
+                  : 'bg-white text-slate-600 hover:bg-amber-50 hover:text-amber-600'
               }`}
             >
               {cat}

@@ -11,9 +11,9 @@ import { images } from '../data/images';
 
 const About = () => {
   useSeo({
-    title: 'About Us | BlueCove Resort',
+    title: 'About Us | Shivani Sunset Bay Beach Resort',
     description:
-      'Learn about the story of BlueCove Resort and our commitment to luxury.',
+      'Learn about the story of Shivani Sunset Bay Beach Resort and our commitment to luxury.',
   });
 
   return (
@@ -35,25 +35,26 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-sm font-bold text-cyan-600 tracking-widest uppercase mb-3">
+              <h2 className="text-sm font-bold text-amber-600 tracking-widest uppercase mb-3">
                 Our Heritage
               </h2>
               <h3 className="text-4xl font-serif text-slate-900 mb-6 leading-tight">
                 A Legacy of Coastal Elegance
               </h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Founded in 2010, BlueCove began as a dream to create a sanctuary
-                where modern luxury could coexist with the raw, untouched beauty
-                of Murudeshwara’s coastline. What started as a small boutique
-                inn has blossomed into the region’s premier luxury resort.
+                Founded in 2010, Shivani Sunset Bay began as a dream to create a
+                sanctuary where modern luxury could coexist with the raw,
+                untouched beauty of Murudeshwara’s coastline. What started as a
+                small boutique inn has blossomed into the region’s premier
+                luxury resort.
               </p>
               <p className="text-slate-600 mb-8 leading-relaxed">
                 Our philosophy is simple: to offer an escape that feels both
                 grand and intimate. Every stone, every fabric, and every smile
-                at BlueCove is curated to ensure that your stay is nothing short
-                of magical.
+                at Shivani Sunset Bay is curated to ensure that your stay is
+                nothing short of magical.
               </p>
-              <div className="h-1 w-20 bg-cyan-500" />
+              <div className="h-1 w-20 bg-amber-500" />
             </motion.div>
           </div>
           <div className="w-full md:w-1/2 relative">
@@ -84,7 +85,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">
                   {stat.value}
                 </div>
                 <div className="text-slate-400 uppercase tracking-wider text-xs font-semibold">
@@ -109,7 +110,7 @@ const About = () => {
               transition={{ delay: index * 0.2 }}
               className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
             >
-              <div className="w-14 h-14 bg-cyan-50 rounded-full flex items-center justify-center text-cyan-600 mx-auto mb-6">
+              <div className="w-14 h-14 bg-amber-50 rounded-full flex items-center justify-center text-amber-600 mx-auto mb-6">
                 <item.icon size={28} />
               </div>
               <h4 className="text-xl font-bold text-slate-800 mb-4">
@@ -124,7 +125,7 @@ const About = () => {
       {/* Call to Action */}
       <Section className="py-20 text-center">
         <h2 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">
-          Ready to experience BlueCove?
+          Ready to experience Shivani Sunset Bay?
         </h2>
         <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
           Join us for a stay that you will cherish forever. Whether for romance,

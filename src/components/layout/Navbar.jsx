@@ -63,7 +63,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 group z-50 relative">
             <Anchor
               className={`w-8 h-8 transition-colors ${
-                scrolled || isOpen ? 'text-cyan-600' : 'text-cyan-500'
+                scrolled || isOpen ? 'text-amber-500' : 'text-amber-400'
               }`}
             />
             <span
@@ -71,7 +71,7 @@ const Navbar = () => {
                 scrolled || isOpen ? 'text-slate-900' : 'text-white'
               }`}
             >
-              Blue<span className="text-cyan-500">Cove</span>
+              Shivani
             </span>
           </Link>
 
@@ -81,9 +81,9 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-cyan-500 ${
+                className={`text-sm font-medium transition-colors hover:text-amber-500 ${
                   scrolled ? 'text-slate-600' : 'text-white/90 hover:text-white'
-                } ${location.pathname === link.path ? 'text-cyan-500' : ''}`}
+                } ${location.pathname === link.path ? 'text-amber-500' : ''}`}
               >
                 {link.name}
               </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
               to="/rooms"
               className={
                 !scrolled
-                  ? 'border-white text-white hover:bg-white hover:text-blue-900 overflow-hidden'
+                  ? 'border-white text-white hover:bg-white hover:text-amber-900 overflow-hidden'
                   : ''
               }
             >
@@ -133,7 +133,7 @@ const Navbar = () => {
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-slate-100">
                 <span className="text-2xl font-bold tracking-tight">
-                  Blue<span className="text-blue-500">Cove</span>
+                  Shivani
                 </span>
                 <button
                   onClick={() => setIsOpen(false)}

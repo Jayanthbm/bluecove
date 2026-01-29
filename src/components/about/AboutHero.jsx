@@ -8,7 +8,7 @@ const AboutHero = () => {
     <Hero
       imageSrc={images.heros.about}
       title="Our Story"
-      subtitle="About BlueCove"
+      subtitle="About Shivani Sunset Bay"
       height="h-[60vh] min-h-[500px]"
     >
       <p className="text-white/90 text-base mb-6 font-light max-w-xl mx-auto">

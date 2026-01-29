@@ -7,7 +7,7 @@ import { Volume2, VolumeX } from 'lucide-react';
 
 const HomeHero = () => {
   const [isMuted, setIsMuted] = useState(() => {
-    return localStorage.getItem('bluecove_sound') === 'muted';
+    return localStorage.getItem('shivani_sound') === 'muted';
   });
   const [isInView, setIsInView] = useState(true);
   const audioRef = useRef(null);
@@ -25,7 +25,7 @@ const HomeHero = () => {
   const toggleSound = () => {
     const newMuted = !isMuted;
     setIsMuted(newMuted);
-    localStorage.setItem('bluecove_sound', newMuted ? 'muted' : 'on');
+    localStorage.setItem('shivani_sound', newMuted ? 'muted' : 'on');
   };
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const HomeHero = () => {
       <Hero
         videoSrc={videoSrc}
         title="Where the Sea Wakes You First"
-        subtitle="Seafront Resort · Murudeshwara"
+        subtitle="Sunset Bay Beach Resort · Murudeshwara"
         overlayOpacity={0.3}
       >
         <p className="text-white/90 text-sm md:text-base mb-10 tracking-wide font-light max-w-lg mx-auto">

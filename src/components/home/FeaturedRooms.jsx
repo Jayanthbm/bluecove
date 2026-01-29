@@ -204,7 +204,7 @@ const FeaturedRooms = () => {
                         <Button
                           to="/rooms"
                           variant="link"
-                          className="text-cyan-500 text-sm font-medium hover:underline flex items-center gap-1 p-0"
+                          className="text-amber-500 text-sm font-medium hover:underline flex items-center gap-1 p-0"
                         >
                           Details <ArrowRight className="w-4 h-4" />
                         </Button>

@@ -23,7 +23,7 @@ import {
 
 const Amenities = () => {
   useSeo({
-    title: 'Amenities | BlueCove Resort',
+    title: 'Amenities | Shivani Sunset Bay Beach Resort',
     description:
       'Discover our world-class amenities including spa, pool, and dining.',
   });
@@ -70,7 +70,7 @@ const Amenities = () => {
 
                 {/* Text Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-600 mb-4">
+                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mb-4">
                     <item.icon size={24} />
                   </div>
                   <h3 className="text-3xl font-serif text-slate-900">
@@ -90,7 +90,7 @@ const Amenities = () => {
       </div>
 
       {/* Additional Features Grid */}
-      <Section bgColor="bg-cyan-900" className="text-white py-24">
+      <Section bgColor="bg-slate-900" className="text-white py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif mb-4">More to Enjoy</h2>
           <p className="text-white/90 text-lg">

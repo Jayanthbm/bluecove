@@ -66,9 +66,9 @@ const Testimonials = () => {
 
   return (
     <Section className="bg-slate-50 relative overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-cyan-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
-      <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] bg-teal-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
+      {/* Decorative blobs - Keeping Cyan/Teal for Ocean vibe background, but maybe warmer accents? Let's mix. */}
+      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-amber-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+      <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] bg-cyan-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
 
       <div className="relative z-10">
         <SectionTitle title="Guest Reviews" subtitle="What People Say" center />
@@ -83,14 +83,14 @@ const Testimonials = () => {
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-slate-400 hover:text-cyan-600 transition-colors bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-100 hidden md:block"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-slate-400 hover:text-amber-600 transition-colors bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-100 hidden md:block"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-slate-400 hover:text-cyan-600 transition-colors bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-100 hidden md:block"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-slate-400 hover:text-amber-600 transition-colors bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-100 hidden md:block"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -126,11 +126,11 @@ const Testimonials = () => {
                   transition={{ duration: 0.4 }}
                   className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 relative group h-full flex flex-col"
                 >
-                  <div className="absolute top-6 right-6 text-cyan-100 group-hover:text-cyan-500 transition-colors duration-300">
+                  <div className="absolute top-6 right-6 text-amber-100 group-hover:text-amber-500 transition-colors duration-300">
                     <Quote size={40} className="fill-current opacity-20" />
                   </div>
 
-                  <div className="flex gap-1 mb-4 text-yellow-400">
+                  <div className="flex gap-1 mb-4 text-amber-400">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} size={16} className="fill-current" />
                     ))}
@@ -141,7 +141,7 @@ const Testimonials = () => {
                   </p>
 
                   <div className="flex items-center gap-4 pt-4 border-t border-slate-50 mt-auto">
-                    <div className="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-lg">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-lg">
                       {review.name.charAt(0)}
                     </div>
                     <div>
