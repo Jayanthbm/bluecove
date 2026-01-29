@@ -76,7 +76,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -104,7 +104,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden z-50 relative p-2"
+            className="lg:hidden z-50 relative p-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
